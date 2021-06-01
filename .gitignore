@@ -1,0 +1,7 @@
+node_modules
+node_modules/
+package-lock.json
+ps.txt
+DummyData.js
+keys.js
+.env
