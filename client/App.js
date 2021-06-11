@@ -1,38 +1,26 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import Header from './components/Header';
-import CharacterCard from './components/CharacterCard';
+import HomeScreen from './screens/HomeScreen';
+
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={{flex: 1}}>
-      <Header title="Tekken 7" />
-      <View style={styles.container}>
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-        <CharacterCard />
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Home"
+          component={HomeScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    //flex: 1,
-    padding: 10,
-    flexDirection: 'row',
-    //  width: 300,
-    // height: 300,
-    //maxWidth: 300,
-    flexWrap: 'wrap',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-});
 
 export default App;
