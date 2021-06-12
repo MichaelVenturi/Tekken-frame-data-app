@@ -8,7 +8,7 @@ const CharacterCard = props => {
 
   return (
     <TouchableOpacity style={styles.container} onPress={onClick}>
-      <View style={{alignItems: 'center'}}>
+      <View style={styles.align_center}>
         <Text>hey</Text>
         <Image
           source={{uri: 'https://randomuser.me/api/portraits/men/1.jpg'}}
@@ -31,6 +31,9 @@ const styles = StyleSheet.create({
   img: {
     width: 120,
     height: 120,
+  },
+  align_center: {
+    alignItems: 'center',
   },
 });
 
