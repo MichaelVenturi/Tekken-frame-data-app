@@ -1,9 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
-const CharacterCard = () => {
+const CharacterCard = props => {
+  const onClick = () => {
+    props.nav(props.data);
+  };
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onClick}>
       <View style={{alignItems: 'center'}}>
         <Text>hey</Text>
         <Image

@@ -1,16 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import Header from '../components/Header';
 import CharacterCard from '../components/CharacterCard';
 
-const App = () => {
+const HomeScreen = ({navigation}) => {
+  const nav = details => {
+    navigation.navigate('Details', details);
+  };
+
   return (
     <View style={styles.flex_1}>
       <Header title="Tekken 7" />
       <View style={styles.container}>
-        <CharacterCard />
-        <CharacterCard />
+        <CharacterCard nav={nav} data={{test: '22', test2: '66'}} />
+        <CharacterCard nav={nav} data={{test: '33', test2: '44'}} />
         <CharacterCard />
         <CharacterCard />
         <CharacterCard />
@@ -38,4 +42,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default HomeScreen;
